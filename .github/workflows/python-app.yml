@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -29,7 +29,7 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller --onefile main.py
+        pyinstaller --onefile src/__main__.py --name Sadidauto_Dofus_Retro_Bot
       env:
         PYTHONUNBUFFERED: 1
 
@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: compiled-exe
-        path: dist/main.exe
+        path: dist/Sadidauto_Dofus_Retro_Bot.exe
